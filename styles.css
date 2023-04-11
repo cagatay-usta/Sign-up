@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "Norse Bold";
+    src: url(Norse-Bold.otf);
+}
+
+* {
+    font-family: "Norse Bold";
+}
+
+body {
+    display: flex;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center; 
+    background-color: grey;
+    width: max(40vw, 280px);
+} 
+
+.logo-text {
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+
+    background-color: coral;
+}
+

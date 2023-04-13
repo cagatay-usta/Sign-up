@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400&display=swap" rel="stylesheet">
     <script src="validation.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Odin Sign-up</title>
@@ -11,20 +14,60 @@
 <body>
 
     <div class="hero-container">
-        <img src="odin-lined.png" alt="odin-logo">
+        <img src="odin-lined.png" alt="odin-logo" id="logo">
         <div class="logo-text">ODIN</div>
     </div>
     <div class="content-container">
         <div class="header-text">
-            This is not a real service to sign-up! Your information will not be stored anywhere but makes you don't use your real password just in case.
-            Sign-up Now!
+            <p>This is not a real service to sign-up!
+            Your information will not be stored anywhere but make sure you don't use your real password nevertheless.</p>
+            <p><strong>Sign-up Now!</strong></p>
         </div>
         <div class="form-container">
-            Username-Password
+            <form action="#" method="GET">
+                <div class="form-input">
+                    <label for="first_name">FIRST NAME</label>
+                    <input id="first_name" name="first_name" type="text" placeholder="Thor" required>
+                </div>
+
+                <div class="form-input">
+                    <label for="last_name">LAST NAME</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Odinson" required>
+                </div>
+
+                <div class="form-input">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" placeholder="example@hotmail.com" required>
+                </div>
+
+                <div class="form-input">
+                    <label for="phone_number">PHONE NUMBER</label>
+                    <input type="tel" id="phone_number" name="phone_number" placeholder="555-555-5555" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                </div>
+
+                <div class="form-input">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" name="password" minlength="8" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <div class="password-info">
+                        <p>- Must be 8 characters long</p>
+                        <p>- At least one uppercase</p>
+                        <p>- At least one number</p>
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <label for="confirm-password">CONFIRM PASSWORD</label>
+                    <input type="password" id="confirm_password" name="confirm_password" minlength="8" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <div class="password-info">- Passwords do not match</div>
+                </div>
+                <button type="submit" id="submit">Create Account</button>
+
+            </form>
+
         </div>
         <div class="form-footer">
-            Create Account
-            Already have an account? Too bad.
+
+            <p>Already have an account? Too bad.</p>
         </div>
     </div>
 </body>

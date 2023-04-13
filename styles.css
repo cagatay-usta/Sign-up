@@ -4,28 +4,241 @@
 }
 
 * {
-    font-family: "Norse Bold";
+   /* Universal reset */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    /* end of reset */
+
+    font-family: 'Raleway', sans-serif;
+    
+
+}
+
+:root {
+    --primary-bgcolor: #EFEFF0;
+    --secondary-bgcolor: #FCFBFC;
+    --primary-maincolor: #00B7FF;
+    --primary-textcolor: #132347;
+    --primary-shadowcolor: #888888;
+    --warning-color: #FC440F;
+}
+
+
+html,
+body {
+    height: 100%;
+    height: 100svh;
 }
 
 body {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--primary-bgcolor);
 }
 
 .hero-container {
     display: flex;
+    justify-content: center;
     align-items: center; 
-    background-color: grey;
-    width: max(40vw, 280px);
+    
+    background-color: var(--primary-maincolor);
+    border-radius: 12px;
+
+    margin: 2rem;
+    padding: 2rem;
+    /* width: 28rem;
+    height: 28rem; */
+    width: 50vh;
+    height: 50vh;
+
+    box-shadow: 1rem 1rem 15px var(--primary-shadowcolor);
+
+    transition: 1s ease;
 } 
 
+.hero-container:hover {
+    box-shadow: 1.5rem 1.5rem 15px var(--primary-shadowcolor);
+}
+
+
 .logo-text {
-    color: white;
+    font-family: "Norse Bold";
+    color: var(--secondary-bgcolor);
+    font-size: 12vh;
+    margin-left: 1rem;
+}
+
+#logo {
+    height: 40%;
+    
 }
 
 .content-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
 
-    background-color: coral;
+    height: auto;
+    
+    width: 60vw;
+    gap: 24px;
 }
 
+.header-text {
+    
+    font-weight: 200;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--primary-textcolor);
+}
+
+.header-text strong {
+    font-weight: bold;
+    color: var(--primary-maincolor)
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+    background-color: var(--secondary-bgcolor);
+
+    height: auto;
+    width: auto;
+
+    padding: 3rem;
+    margin-right: 3rem;
+
+    border-radius: 12px;
+    
+    box-shadow: 1rem 1rem 15px var(--primary-shadowcolor);
+
+    transition: 1s ease;
+}
+
+.form-container:hover {
+    box-shadow: 1.5rem 1.5rem 15px var(--primary-shadowcolor);
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4vw;
+    height: auto;
+    width: 100%;
+    
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--primary-textcolor);
+    
+    
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+input {
+    border: 1px solid var(--primary-maincolor);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+    transition: 0.5s ease;
+}
+
+.password-info {
+    position: relative;
+    top: 0.5rem;
+    margin-top: .3rem;
+    color: var(--warning-color);
+}
+
+input:focus {
+    box-shadow: 0.2rem 0.2rem 10px var(--primary-shadowcolor);
+}
+
+input:invalid {
+    border-color: var(--warning-color);
+}
+
+input:valid {
+    border-color: var(--primary-maincolor);
+}
+
+input:placeholder-shown {
+    border-color: var(--primary-shadowcolor);
+}
+
+#submit {
+    padding: 1rem;
+    
+    width: 12rem;
+    color: var(--secondary-bgcolor);
+    font-weight: bold;
+
+    background-color: var(--primary-maincolor);
+    border-radius: 0.3rem;
+
+    transition: 1s ease;
+}
+
+#submit:hover {
+    background-color: #1A5E63;
+    box-shadow: 0.5rem 0.5rem 15px var(--primary-shadowcolor);
+
+}
+
+.form-footer {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--primary-textcolor);
+    padding: 1rem 0rem 2rem 0rem;
+}
+
+@media only screen and (max-width: 1000px){
+    .hero-container {
+        width: 100%;
+        height: 20%;
+        margin: 1rem;
+    }
+    .logo-text {
+        font-size: 4rem;
+    }
+    #logo {
+        height: 6rem;
+    }
+    .content-container {
+        width: 100%;
+        margin: 1rem;
+    }
+    .header-text {
+        font-size: 1rem;
+    }
+    .form-container {
+        height: auto;
+        margin-right: 0;
+    }
+    .form-input {
+        margin: 0;
+        padding: 1rem;
+    }
+    #submit {
+        margin: 1rem;
+        
+    }
+
+}

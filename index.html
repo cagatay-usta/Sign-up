@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400&display=swap" rel="stylesheet">
-    <script src="validation.js"></script>
+    <script defer src="validation.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Odin Sign-up</title>
 </head>
@@ -49,16 +49,16 @@
                     <label for="password">PASSWORD</label>
                     <input type="password" id="password" name="password" minlength="8" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                     <div class="password-info">
-                        <p>- Must be 8 characters long</p>
-                        <p>- At least one uppercase</p>
-                        <p>- At least one number</p>
+                        <p id="password-length">- Must be 8 characters long</p>
+                        <p id="uppercase">- At least one uppercase</p>
+                        <p id="number">- At least one number</p>
                     </div>
                 </div>
 
                 <div class="form-input">
                     <label for="confirm-password">CONFIRM PASSWORD</label>
                     <input type="password" id="confirm_password" name="confirm_password" minlength="8" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                    <div class="password-info">- Passwords do not match</div>
+                    <div class="password-info" id="password_match">- Passwords <span id="match_error">do not</span> match</div>
                 </div>
                 <button type="submit" id="submit">Create Account</button>
 
